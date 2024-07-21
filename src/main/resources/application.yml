@@ -1,0 +1,2 @@
+spring:
+  application.name: demo-valkey-springboot3-standalone
