@@ -1,0 +1,12 @@
+spring.data.redis:
+  # standalone (valkey master)
+  host: ${VALKEY_HOST:localhost}
+  port: ${VALKEY_PORT:6389}
+  password: ${VALKEY_PASSWORD:root}
+
+  lettuce:
+    pool:
+      max-active: 32
+      max-idle: 32
+      min-idle: 16
+      enabled: true

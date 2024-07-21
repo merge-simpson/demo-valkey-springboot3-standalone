@@ -1,2 +1,5 @@
 spring:
   application.name: demo-valkey-springboot3-standalone
+  config:
+    import:
+      - app/valkey/redis.yml
