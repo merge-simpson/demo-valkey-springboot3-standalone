@@ -62,7 +62,9 @@ This project is an examination of whether that is possible.
 # 프로젝트 받기
 
 깃이 설치되어 있어야 합니다. ([Git 설치](https://git-scm.com/download/win))  
-원하는 경로에서 다음 명령어를 입력하면, 프로젝트가 하위 폴더로 다운로드됩니다.
+원하는 경로에서 다음 명령어를 입력하면, 프로젝트가 하위 폴더로 다운로드됩니다.  
+터미널에서 경로 이동은 `cd` 명령어를 이용하세요.
+([Change Directory](https://www.google.com/search?q=change+directory))
 
 ```bash
 git clone https://github.com/merge-simpson/demo-valkey-springboot3-standalone.git
@@ -79,9 +81,7 @@ git clone https://github.com/merge-simpson/demo-valkey-springboot3-standalone.gi
 
 2. **Command Lines**
 
-   프로젝트 루트경로에서 다음 명령어를 실행합니다.  
-   터미널에서 경로 이동은 `cd` 명령어를 이용하세요.
-   ([Change Directory](https://www.google.com/search?q=change+directory))
+   프로젝트 루트경로에서 다음 명령어를 실행합니다.
 
     ```bash
     docker compose up -d
