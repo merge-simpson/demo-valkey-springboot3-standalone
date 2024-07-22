@@ -21,7 +21,7 @@ services:
     environment:
       - VALKEY_REPLICATION_MODE=slave
       - VALKEY_MASTER_HOST=demo-valkey-primary
-      - VALKEY_MASTER_PORT_NUMBER=6389
+      - VALKEY_MASTER_PORT_NUMBER=6379
       - VALKEY_MASTER_PASSWORD=root
       - VALKEY_PASSWORD=root
       - VALKEY_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
