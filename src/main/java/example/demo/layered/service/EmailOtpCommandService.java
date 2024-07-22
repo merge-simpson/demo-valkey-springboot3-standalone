@@ -1,6 +1,6 @@
 package example.demo.layered.service;
 
-import example.common.util.random.PaddedDecimalSecuredRandom;
+import example.common.random.bean.PaddedDecimalRandom;
 import example.demo.layered.entity.EmailOtp;
 import example.demo.layered.exception.EmailOtpErrorCode;
 import example.demo.layered.mapper.EmailOtpDtoMapper;
@@ -20,13 +20,15 @@ public class EmailOtpCommandService implements EmailOtpInsertionUseCase, EmailOt
     private final EmailOtpRepository emailOtpRepository;
     private final EmailOtpDtoMapper mapper;
 
+    private final PaddedDecimalRandom random;
+
     @Override
     public EmailOtp save(String email) {
         // 존재하는지 확인 (존재하면 기존 걸 삭제)
         Optional<EmailOtp> optional = emailOtpRepository.findById(email);
         optional.ifPresent(emailOtpRepository::delete);
 
-        String otp = PaddedDecimalSecuredRandom.nextStrong(6);
+        String otp = random.nextStrong(6);
         Integer ttl = 180;
         Instant createdAt = Instant.now();
 
