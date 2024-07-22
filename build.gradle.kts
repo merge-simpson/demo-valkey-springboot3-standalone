@@ -52,3 +52,7 @@ dependencies {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+tasks.withType<JavaCompile> {
+    options.forkOptions.jvmArgs = listOf("-Amapstruct.defaultComponentModel=spring")
+}
