@@ -1,4 +1,4 @@
-package example.common.util.random;
+package example.common.random.util;
 
 import java.security.SecureRandom;
 
