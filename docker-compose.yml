@@ -6,7 +6,7 @@ services:
     ports:
       - '6389:6379'
     environment:
-      - VALKEY_REPLICATION_MODE=master
+      - VALKEY_REPLICATION_MODE=primary
       - VALKEY_PASSWORD=root
       - VALKEY_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
     volumes:
@@ -19,10 +19,10 @@ services:
     depends_on:
       - demo-valkey-primary
     environment:
-      - VALKEY_REPLICATION_MODE=slave
-      - VALKEY_MASTER_HOST=demo-valkey-primary
-      - VALKEY_MASTER_PORT_NUMBER=6379
-      - VALKEY_MASTER_PASSWORD=root
+      - VALKEY_REPLICATION_MODE=replica
+      - VALKEY_PRIMARY_HOST=demo-valkey-primary
+      - VALKEY_PRIMARY_PORT_NUMBER=6379
+      - VALKEY_PRIMARY_PASSWORD=root
       - VALKEY_PASSWORD=root
       - VALKEY_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
 
