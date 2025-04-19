@@ -2,7 +2,7 @@ version: "3"
 
 services:
   demo-valkey-primary:
-    image: bitnami/valkey:8.1
+    image: bitnami/valkey:7.2
     ports:
       - '6389:6379'
     environment:
@@ -13,7 +13,7 @@ services:
       - 'sticky_volume_demo-valkey-primary:/bitnami/valkey/data'
 
   demo-valkey-secondary:
-    image: bitnami/valkey:8.1
+    image: bitnami/valkey:7.2
     ports:
       - '6388:6379'
     depends_on:
